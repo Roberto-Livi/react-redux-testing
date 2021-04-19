@@ -19,7 +19,10 @@ it('has a textarea and a button', () => {
 })
 
 it('has a textarea that users can type in', () => {
-    wrapped.find('textarea').setImmediate(() => {
-        
+    wrapped.find('textarea').simulate('change', {
+        target: { value: 'new comment' }
     })
+    wrapped.update();
+
+    expect(wrapped.find('textarea').prop('value')).toEqual('new comment')
 })
