@@ -1,10 +1,17 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import App from '../App'
-import CommentBox from '../CommentBox'
+import App from 'components/App'
+import CommentBox from 'components/CommentBox'
+import CommentList from 'components/CommentList'
 
-it('shows a comment box', () => {
+it('shows CommentBox component', () => {
     const app = shallow(<App />);
 
     expect(app.find(CommentBox).length).toEqual(1);
+})
+
+it('shows CommentList component', () => {
+    const app = shallow(<App />);
+
+    expect(app.find(CommentList).length).toEqual(1);
 })
