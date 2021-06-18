@@ -5,10 +5,10 @@ import reducers from 'reducers'
 
 // const store = createStore(reducers, {});
 
-export default (props) => {
+export default ({ children, initialState = {} }) => {
     return (
-        <Provider store={createStore(reducers, {})}>
-            {props.children}
+        <Provider store={createStore(reducers, initialState)}>
+            {children}
         </Provider>
     )
 }
